@@ -1,8 +1,16 @@
 #pragma once
 #include "Thread.h"
+#include "MessageHandler.h"
 
 class MessageHandler;
 class Message;
+
+class MessageThreadHandler:public MessageHandler{
+private:
+	MessageThread *mThread;
+public:
+	MessageThreadHandler(MessageThread* thread, IMessageLooper* looper):MessageHandler(looper), mThread(thread){}
+};
 
 class MessageThread: public Thread{
 public:

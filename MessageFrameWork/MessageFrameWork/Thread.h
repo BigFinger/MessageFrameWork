@@ -7,7 +7,7 @@ typedef void* HANDLE;
 class Thread: public Runnable {
 private:
 	Runnable *task;
-	HANDLE threadHandles;
+	HANDLE threadHandle;
 	unsigned int threadId;
 	bool started;
 	bool joined;
