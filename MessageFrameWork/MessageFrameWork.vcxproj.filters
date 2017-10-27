@@ -31,13 +31,13 @@
     <Filter Include="源文件\Looper">
       <UniqueIdentifier>{09fe1855-cdd6-479f-8814-4dab03c10f0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Message">
+      <UniqueIdentifier>{b4ed8367-8899-4180-808b-657a50f2141a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MessageHandler.h">
       <Filter>头文件\Handler</Filter>
-    </ClInclude>
-    <ClInclude Include="Message.h">
-      <Filter>头文件\Message</Filter>
     </ClInclude>
     <ClInclude Include="MessageThreadHandler.h">
       <Filter>头文件\Handler</Filter>
@@ -60,7 +60,13 @@
     <ClInclude Include="include\Looper\Looper.h">
       <Filter>头文件\Looper</Filter>
     </ClInclude>
-    <ClInclude Include="MessageStack.h">
+    <ClInclude Include="include\Message\Message.h">
+      <Filter>头文件\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Message\MessageQueue.h">
+      <Filter>头文件\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Message\MessageStorge.h">
       <Filter>头文件\Message</Filter>
     </ClInclude>
   </ItemGroup>
@@ -71,14 +77,23 @@
     <ClCompile Include="src\Thread\Thread.cpp">
       <Filter>源文件\Thread</Filter>
     </ClCompile>
-    <ClCompile Include="MessageThread.cpp">
-      <Filter>源文件\Thread</Filter>
-    </ClCompile>
     <ClCompile Include="Looper.cpp">
       <Filter>源文件\Looper</Filter>
     </ClCompile>
     <ClCompile Include="BaseMessageLooper.cpp">
       <Filter>源文件\Looper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Message\MessageQueue.cpp">
+      <Filter>源文件\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Thread\MessageThread.cpp">
+      <Filter>源文件\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Message\MessageStorge.cpp">
+      <Filter>源文件\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Message\Message.cpp">
+      <Filter>源文件\Message</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,14 +1,11 @@
 #pragma once
 #include "BaseMessageLooper.h"
+#include "Message/MessageQueue.h"
+#include "Message/Message.h"
 
-class Message;
-class MessageQueue;
 class Looper : public BaseMessageLooper{
 private:
-	MessageQueue* mQueue;
-private:
-	static Looper* prepare();
-	static void destroy();
+	MessageQueue<Message>* mQueue;
 public:
 	Looper();
 	~Looper();

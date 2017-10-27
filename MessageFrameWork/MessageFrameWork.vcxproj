@@ -121,18 +121,22 @@
     <ClInclude Include="include\Looper\BaseMessageLooper.h" />
     <ClInclude Include="include\Looper\IMessageLooper.h" />
     <ClInclude Include="include\Looper\Looper.h" />
+    <ClInclude Include="include\Message\Message.h" />
+    <ClInclude Include="include\Message\MessageQueue.h" />
+    <ClInclude Include="include\Message\MessageStorge.h" />
     <ClInclude Include="include\Thread\MessageThread.h" />
     <ClInclude Include="include\Thread\Runnable.h" />
     <ClInclude Include="include\Thread\Thread.h" />
-    <ClInclude Include="Message.h" />
     <ClInclude Include="MessageHandler.h" />
-    <ClInclude Include="MessageStack.h" />
     <ClInclude Include="MessageThreadHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseMessageLooper.cpp" />
     <ClCompile Include="Looper.cpp" />
-    <ClCompile Include="MessageThread.cpp" />
+    <ClCompile Include="src\Message\Message.cpp" />
+    <ClCompile Include="src\Message\MessageQueue.cpp" />
+    <ClCompile Include="src\Message\MessageStorge.cpp" />
+    <ClCompile Include="src\Thread\MessageThread.cpp" />
     <ClCompile Include="src\Thread\Runnable.cpp" />
     <ClCompile Include="src\Thread\Thread.cpp" />
   </ItemGroup>
