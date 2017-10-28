@@ -34,14 +34,17 @@
     <Filter Include="源文件\Message">
       <UniqueIdentifier>{b4ed8367-8899-4180-808b-657a50f2141a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Handler">
+      <UniqueIdentifier>{08615a8b-8218-4bf6-aaf8-bef1bcc0ab15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Test">
+      <UniqueIdentifier>{2e2aa2f8-f194-4451-8afc-299d4589a6b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Test">
+      <UniqueIdentifier>{56c7cba1-dd28-4d6f-ad9b-bdb02439d7cf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MessageHandler.h">
-      <Filter>头文件\Handler</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageThreadHandler.h">
-      <Filter>头文件\Handler</Filter>
-    </ClInclude>
     <ClInclude Include="include\Thread\MessageThread.h">
       <Filter>头文件\Thread</Filter>
     </ClInclude>
@@ -66,8 +69,14 @@
     <ClInclude Include="include\Message\MessageQueue.h">
       <Filter>头文件\Message</Filter>
     </ClInclude>
-    <ClInclude Include="include\Message\MessageStorge.h">
-      <Filter>头文件\Message</Filter>
+    <ClInclude Include="include\Handler\MessageHandler.h">
+      <Filter>头文件\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Handler\MessageThreadHandler.h">
+      <Filter>头文件\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Test\TestThread.h">
+      <Filter>头文件\Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,23 +86,29 @@
     <ClCompile Include="src\Thread\Thread.cpp">
       <Filter>源文件\Thread</Filter>
     </ClCompile>
-    <ClCompile Include="Looper.cpp">
-      <Filter>源文件\Looper</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseMessageLooper.cpp">
-      <Filter>源文件\Looper</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Message\MessageQueue.cpp">
-      <Filter>源文件\Message</Filter>
-    </ClCompile>
     <ClCompile Include="src\Thread\MessageThread.cpp">
       <Filter>源文件\Thread</Filter>
     </ClCompile>
-    <ClCompile Include="src\Message\MessageStorge.cpp">
-      <Filter>源文件\Message</Filter>
-    </ClCompile>
     <ClCompile Include="src\Message\Message.cpp">
       <Filter>源文件\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Looper\BaseMessageLooper.cpp">
+      <Filter>源文件\Looper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Looper\Looper.cpp">
+      <Filter>源文件\Looper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Handler\MessageHandler.cpp">
+      <Filter>源文件\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Handler\MessageThreadHandler.cpp">
+      <Filter>源文件\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Test\TestThread.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Test\main.cpp">
+      <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

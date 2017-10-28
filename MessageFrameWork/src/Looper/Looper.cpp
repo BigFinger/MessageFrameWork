@@ -19,9 +19,16 @@ void Looper::loop(){
 			break;
 		}
 		Message* msg = mQueue->pop();
-		if (msg == NULL)
+		if (msg != NULL)
 		{
-
+			onProcMessage(msg);
 		}
+	}
+}
+
+void Looper::postMessage(Message * message){
+	if (!mQuitting && mQueue != NULL)
+	{
+		mQueue->push(message);
 	}
 }

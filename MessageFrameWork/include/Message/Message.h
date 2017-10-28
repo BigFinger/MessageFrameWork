@@ -1,10 +1,12 @@
 #pragma once
 #include<iostream>
+#include "Message/MessageQueue.h"
 
 class Runnable;
 class MessageHandler;
-class MessageQueue;
 class BaseMessageLooper;
+
+#define MESSAGE_ID_INTERNAL_EXIT   -0x1000
 
 class Message{
 public:
@@ -27,16 +29,12 @@ public:
 	static void releasePool();
 private:
 	static Message* get();
-	static Message* get(Runnable* r);
-	static Message* get(MessageHandler* handler);
-
+	friend class MessageHandler;
+	friend class BaseMessageLooper;
+	template<class T>
+	friend class MessageQueue;
 private:
-	Message():what(0), target(NULL){init();}
-	void init(){
-		arg1 = arg2 = arg3 = arg4 = 0;
-		ptr = NULL;
-		result = 0;
-		when = 0;
-		callback = NULL;
-	}
+	Message();
+	~Message();
+	void init();
 };

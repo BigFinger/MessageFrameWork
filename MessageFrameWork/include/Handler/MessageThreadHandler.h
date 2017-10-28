@@ -1,13 +1,13 @@
 #pragma once
 #include "MessageHandler.h"
-#include "MessageThread.h"
+#include "Thread/MessageThread.h"
 
 class MessageThreadHandler:public MessageHandler{
 private:
 	MessageThread *mThread;
 public:
 	MessageThreadHandler(MessageThread* thread, IMessageLooper* looper):MessageHandler(looper), mThread(thread){}
-	void handlerMessage(Message& msg) const {
-		mThread->onMessage(msg);
+	void handleMessage(Message& message)const {
+		mThread->onMessage(message);
 	}
 };

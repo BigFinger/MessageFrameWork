@@ -11,8 +11,8 @@ public:
 	~Looper();
 public:
 	void loop();
-	void removeMsgByID(int msgid);
 private:
-	void postMessage(Message* message, unsigned long when);
-
+	void postMessage(Message* message);
+private:
+	static void initTLSKey();
 };

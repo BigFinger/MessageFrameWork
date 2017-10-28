@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Thread\Thread.h"
 #include <process.h>
 
@@ -72,5 +73,9 @@ void Thread::setThreadName(char * str){
 
 const char* Thread::getThreadName(){
 	return mThreadName;
+}
+
+HANDLE Thread::getThreadHandle(){
+	return this->threadHandle;
 }
 
