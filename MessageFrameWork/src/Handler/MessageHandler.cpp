@@ -20,6 +20,14 @@ Message* MessageHandler::obtainMessage(int what){
 	return msg;
 }
 
+IMessageLooper* MessageHandler::getLooper(){
+	return mLooper;
+}
+
+void MessageHandler::handleMessage(Message& message)const {
+
+}
+
 void MessageHandler::sendMessage(Message* msg){
 	if (mLooper != NULL)
 	{

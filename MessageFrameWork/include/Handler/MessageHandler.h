@@ -11,12 +11,11 @@ public:
 	MessageHandler(IMessageLooper* looper):mLooper(looper){;}
 	virtual ~MessageHandler(){;}
 
-	IMessageLooper* getLooper(){ return mLooper;}
+	IMessageLooper* getLooper();
 public:
 	Message* obtainMessage();
 	Message* obtainMessage(int what);
 	void sendMessage(Message* msg);
-	bool looperNotReady(){return !mLooper;}
 public:
-	virtual void handleMessage(Message& message)const{;}
+	virtual void handleMessage(Message& message)const;
 };
