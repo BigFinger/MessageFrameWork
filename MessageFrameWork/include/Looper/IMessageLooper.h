@@ -1,7 +1,7 @@
 #pragma once
 class Message;
 class MessageHandler;
-class IMessageLooper{
+class _declspec(dllexport) IMessageLooper{
 public:
 	virtual ~IMessageLooper(){}
 	virtual void loop() = 0;

@@ -8,7 +8,7 @@ class BaseMessageLooper;
 
 #define MESSAGE_ID_INTERNAL_EXIT   -0x1000
 
-class Message{
+class _declspec(dllexport) Message{
 public:
 	int what;
 	int result;

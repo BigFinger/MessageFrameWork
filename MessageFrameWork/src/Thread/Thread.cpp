@@ -20,14 +20,33 @@ Thread::Thread(const char *szThreadName){
 	}
 }
 
+Thread::Thread(Runnable* task, const char* szThreadName = NULL){
+	this->task = task;
+	this->started = false;
+	this->joined = false;
+	this->threadHandle = 0;
+	this->threadId = 0;
+
+	if (szThreadName != NULL)
+	{
+		strncpy(mThreadName, szThreadName, 31);
+		mThreadName[31] = 0;
+	}
+	else
+	{
+		mThreadName[0] = 0;
+	}
+}
+
 Thread::~Thread(){}
 
-void Thread::start(){
+bool Thread::start(){
 	if (!started)
 	{
 		this->threadHandle = (HANDLE)_beginthreadex(NULL, 0, Thread::runCallback, this, 0, &threadId);
 	}
 	started = true;
+	return started;
 }
 
 void Thread::join(){

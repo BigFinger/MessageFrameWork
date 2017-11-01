@@ -3,7 +3,7 @@
 
 class Looper;
 class IMessageLooper;
-class MessageHandler {
+class _declspec(dllexport) MessageHandler {
 protected:
 	IMessageLooper* mLooper;
 public:

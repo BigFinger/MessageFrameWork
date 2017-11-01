@@ -5,7 +5,7 @@
 class MessageHandler;
 class Message;
 
-class MessageThread: public Thread{
+class _declspec(dllexport) MessageThread: public Thread{
 public:
 	MessageThread(const char *szThreadName);
 	~MessageThread();
@@ -17,7 +17,7 @@ public:
 	virtual void onDestroy() = 0;
 public:
 	MessageHandler* getHandler();
-	void start();
+	bool start();
 	void quit(bool wait=true);
 private:
 	MessageHandler* mHandler;

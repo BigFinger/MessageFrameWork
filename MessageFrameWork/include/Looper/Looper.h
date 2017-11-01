@@ -3,7 +3,7 @@
 #include "Message/MessageQueue.h"
 #include "Message/Message.h"
 
-class Looper : public BaseMessageLooper{
+class _declspec(dllexport) Looper : public BaseMessageLooper{
 private:
 	MessageQueue<Message>* mQueue;
 public:

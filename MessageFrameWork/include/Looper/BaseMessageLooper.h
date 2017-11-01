@@ -2,7 +2,7 @@
 #include "IMessageLooper.h"
 
 class MessageHandler;
-class BaseMessageLooper : public IMessageLooper {
+class _declspec(dllexport) BaseMessageLooper : public IMessageLooper {
 protected:
 	bool mQuitting;
 	MessageHandler* mHandler;

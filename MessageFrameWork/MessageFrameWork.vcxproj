@@ -30,7 +30,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -86,6 +86,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -125,7 +126,9 @@
     <ClInclude Include="include\Looper\Looper.h" />
     <ClInclude Include="include\Message\Message.h" />
     <ClInclude Include="include\Message\MessageQueue.h" />
-    <ClInclude Include="include\Test\TestThread.h" />
+    <ClInclude Include="include\Task\Task.h" />
+    <ClInclude Include="include\Task\TaskObserver.h" />
+    <ClInclude Include="include\Task\TaskRunner.h" />
     <ClInclude Include="include\Thread\MessageThread.h" />
     <ClInclude Include="include\Thread\Runnable.h" />
     <ClInclude Include="include\Thread\Thread.h" />
@@ -136,8 +139,6 @@
     <ClCompile Include="src\Looper\BaseMessageLooper.cpp" />
     <ClCompile Include="src\Looper\Looper.cpp" />
     <ClCompile Include="src\Message\Message.cpp" />
-    <ClCompile Include="src\Test\main.cpp" />
-    <ClCompile Include="src\Test\TestThread.cpp" />
     <ClCompile Include="src\Thread\MessageThread.cpp" />
     <ClCompile Include="src\Thread\Runnable.cpp" />
     <ClCompile Include="src\Thread\Thread.cpp" />

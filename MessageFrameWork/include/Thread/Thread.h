@@ -5,7 +5,7 @@
 
 typedef void* HANDLE;
 
-class Thread: public Runnable {
+class _declspec(dllexport) Thread: public Runnable {
 private:
 	Runnable *task;
 	HANDLE threadHandle;
@@ -23,8 +23,9 @@ public:
 	static unsigned _stdcall runCallback(void *param);
 public:
 	Thread(const char* szThreadName = NULL);
+	Thread(Runnable* task, const char* szThreadName = NULL);
 	virtual ~Thread();
-	virtual void start();
+	virtual bool start();
 	virtual void join();
 	virtual HANDLE getThreadHandle();
 protected:

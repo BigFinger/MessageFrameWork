@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 using namespace std;
-class Runnable{
+class _declspec(dllexport) Runnable{
 protected:
 	Runnable();
 public:

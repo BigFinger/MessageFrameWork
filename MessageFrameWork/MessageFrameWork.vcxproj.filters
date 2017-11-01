@@ -37,11 +37,8 @@
     <Filter Include="源文件\Handler">
       <UniqueIdentifier>{08615a8b-8218-4bf6-aaf8-bef1bcc0ab15}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Test">
-      <UniqueIdentifier>{2e2aa2f8-f194-4451-8afc-299d4589a6b7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Test">
-      <UniqueIdentifier>{56c7cba1-dd28-4d6f-ad9b-bdb02439d7cf}</UniqueIdentifier>
+    <Filter Include="头文件\Task">
+      <UniqueIdentifier>{493af4d2-507f-4ee5-82ac-ac2e6d2955d0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -75,8 +72,14 @@
     <ClInclude Include="include\Handler\MessageThreadHandler.h">
       <Filter>头文件\Handler</Filter>
     </ClInclude>
-    <ClInclude Include="include\Test\TestThread.h">
-      <Filter>头文件\Test</Filter>
+    <ClInclude Include="include\Task\Task.h">
+      <Filter>头文件\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Task\TaskObserver.h">
+      <Filter>头文件\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Task\TaskRunner.h">
+      <Filter>头文件\Task</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -103,12 +106,6 @@
     </ClCompile>
     <ClCompile Include="src\Handler\MessageThreadHandler.cpp">
       <Filter>源文件\Handler</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Test\TestThread.cpp">
-      <Filter>源文件\Test</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Test\main.cpp">
-      <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
