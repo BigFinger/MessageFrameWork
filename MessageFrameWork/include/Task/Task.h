@@ -12,7 +12,7 @@ public:
 	Task(TaskObserver& ob, const char* ThreadName);
 	~Task();
 public:
-	bool start(TaskRunner* runner);
+	bool start(TaskRunner* taskRunner);
 	bool isRunning() const;
 public:
 	void run();

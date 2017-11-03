@@ -11,6 +11,7 @@ public:
 	~Looper();
 public:
 	void loop();
+
 private:
 	void postMessage(Message* message);
 private:

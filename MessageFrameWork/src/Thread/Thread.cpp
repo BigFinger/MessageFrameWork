@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "Thread\Thread.h"
 #include <process.h>
 
@@ -20,7 +19,7 @@ Thread::Thread(const char *szThreadName){
 	}
 }
 
-Thread::Thread(Runnable* task, const char* szThreadName = NULL){
+Thread::Thread(Runnable* task, const char* szThreadName){
 	this->task = task;
 	this->started = false;
 	this->joined = false;

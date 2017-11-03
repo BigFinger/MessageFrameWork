@@ -22,12 +22,12 @@ MessageHandler* MessageThread::getHandler(){
 	return mHandler;
 }
 
-void MessageThread::start(){
+bool MessageThread::start(){
 	printf("Waiter: Hello, EveryBody, The 85C is opening~~~\n");
 	Looper *looper = new Looper();
 	mHandler = new MessageThreadHandler(this, looper);
-	Thread::start();
-
+	return Thread::start();
+	
 }
 
 void MessageThread::quit(bool wait) {

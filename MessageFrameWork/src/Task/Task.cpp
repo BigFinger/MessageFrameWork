@@ -53,3 +53,8 @@ void Task::run(){
 	Message* msg = mHandler->obtainMessage(ret);
 	msg->sendToTarget();
 }
+
+void Task::notifyObserver(int result){
+	mIsRunning = false;
+	mObserver.taskFinished(result);
+}

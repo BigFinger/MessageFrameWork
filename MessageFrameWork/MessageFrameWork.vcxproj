@@ -86,7 +86,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -121,6 +121,7 @@
   <ItemGroup>
     <ClInclude Include="include\Handler\MessageHandler.h" />
     <ClInclude Include="include\Handler\MessageThreadHandler.h" />
+    <ClInclude Include="include\Handler\TaskHandler.h" />
     <ClInclude Include="include\Looper\BaseMessageLooper.h" />
     <ClInclude Include="include\Looper\IMessageLooper.h" />
     <ClInclude Include="include\Looper\Looper.h" />
@@ -136,9 +137,11 @@
   <ItemGroup>
     <ClCompile Include="src\Handler\MessageHandler.cpp" />
     <ClCompile Include="src\Handler\MessageThreadHandler.cpp" />
+    <ClCompile Include="src\Handler\TaskHandler.cpp" />
     <ClCompile Include="src\Looper\BaseMessageLooper.cpp" />
     <ClCompile Include="src\Looper\Looper.cpp" />
     <ClCompile Include="src\Message\Message.cpp" />
+    <ClCompile Include="src\Task\Task.cpp" />
     <ClCompile Include="src\Thread\MessageThread.cpp" />
     <ClCompile Include="src\Thread\Runnable.cpp" />
     <ClCompile Include="src\Thread\Thread.cpp" />
