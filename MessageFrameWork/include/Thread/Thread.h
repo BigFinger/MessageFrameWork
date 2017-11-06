@@ -18,6 +18,7 @@ public:
 	void setThreadName(char* str);
 	const char* getThreadName();
 	unsigned long getThreadId();
+	static unsigned long getCurrentThreadId();
 public:
 	static void sleep(int millsecs);
 	static unsigned _stdcall runCallback(void *param);

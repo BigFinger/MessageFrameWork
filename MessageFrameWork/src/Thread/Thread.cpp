@@ -1,5 +1,6 @@
 #include "Thread\Thread.h"
 #include <process.h>
+#include <windows.h>
 
 Thread::Thread(const char *szThreadName){
 	this->task = this;
@@ -79,6 +80,10 @@ unsigned __stdcall Thread::runCallback(void *param){
 
 unsigned long Thread::getThreadId(){
 	return threadId;
+}
+
+unsigned long Thread::getCurrentThreadId(){
+	return GetCurrentThreadId();
 }
 
 void Thread::setThreadName(char * str){
