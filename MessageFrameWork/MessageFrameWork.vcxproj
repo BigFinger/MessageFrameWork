@@ -126,6 +126,7 @@
     <ClInclude Include="include\Looper\IMessageLooper.h" />
     <ClInclude Include="include\Looper\Looper.h" />
     <ClInclude Include="include\Message\Message.h" />
+    <ClInclude Include="include\Message\MessageControl.h" />
     <ClInclude Include="include\Message\MessageQueue.h" />
     <ClInclude Include="include\Task\Task.h" />
     <ClInclude Include="include\Task\TaskObserver.h" />
@@ -141,6 +142,7 @@
     <ClCompile Include="src\Looper\BaseMessageLooper.cpp" />
     <ClCompile Include="src\Looper\Looper.cpp" />
     <ClCompile Include="src\Message\Message.cpp" />
+    <ClCompile Include="src\Message\MessageControl.cpp" />
     <ClCompile Include="src\Task\Task.cpp" />
     <ClCompile Include="src\Thread\MessageThread.cpp" />
     <ClCompile Include="src\Thread\Runnable.cpp" />

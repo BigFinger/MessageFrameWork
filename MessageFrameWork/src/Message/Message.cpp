@@ -18,6 +18,15 @@ void Message::init(){
 	result = 0;
 	when = 0;
 	callback = NULL;
+	mControl = NULL;
+}
+
+MessageControl& Message::getControl(){
+	if (mControl == NULL)
+	{
+		mControl = new MessageControl();
+	}
+	return *mControl;
 }
 
 Message* Message::get(){
@@ -35,6 +44,26 @@ Message* Message::get(){
 	{
 		msg = new Message();
 	}
+	return msg;
+}
+
+Message* Message::get(Runnable* r){
+	if (r == NULL)
+	{
+		return NULL;
+	}
+	Message* msg = get();
+	msg->callback = r;
+	return msg;
+}
+
+Message* Message::get(MessageHandler* handler){
+	if (handler == NULL)
+	{
+		return NULL;
+	}
+	Message* msg = get();
+	msg->target = handler;
 	return msg;
 }
 

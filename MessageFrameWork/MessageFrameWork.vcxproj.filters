@@ -87,6 +87,9 @@
     <ClInclude Include="include\Handler\TaskHandler.h">
       <Filter>头文件\Handler</Filter>
     </ClInclude>
+    <ClInclude Include="include\Message\MessageControl.h">
+      <Filter>头文件\Message</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Thread\Runnable.cpp">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="src\Handler\TaskHandler.cpp">
       <Filter>源文件\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Message\MessageControl.cpp">
+      <Filter>源文件\Message</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
