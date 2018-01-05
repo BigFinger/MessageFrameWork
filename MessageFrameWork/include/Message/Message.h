@@ -1,6 +1,6 @@
 #pragma once
 #include<iostream>
-#include "Message/MessageQueue.h"
+#include "Message/Queue.h"
 #include "Message/MessageControl.h"
 
 class Runnable;
@@ -23,7 +23,7 @@ private:
 	friend class MessageHandler;
 	friend class BaseMessageLooper;
 	template<class T>
-	friend class MessageQueue;
+	friend class Queue;
 private:
 	Message();
 	~Message();

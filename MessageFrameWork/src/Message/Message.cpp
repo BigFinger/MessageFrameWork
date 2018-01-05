@@ -1,8 +1,8 @@
 #include "Message/Message.h"
-#include "Message/MessageQueue.h"
+#include "Message/Queue.h"
 #include "Handler/MessageHandler.h"
 
-static MessageQueue<Message> gFreeQueue;
+static Queue<Message> gFreeQueue;
 
 Message::Message():what(0), target(NULL), next(NULL){init();}
 

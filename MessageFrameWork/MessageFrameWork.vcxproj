@@ -128,6 +128,8 @@
     <ClInclude Include="include\Message\Message.h" />
     <ClInclude Include="include\Message\MessageControl.h" />
     <ClInclude Include="include\Message\MessageQueue.h" />
+    <ClInclude Include="include\Storge\MinHeap.h" />
+    <ClInclude Include="include\Storge\Queue.h" />
     <ClInclude Include="include\Task\Task.h" />
     <ClInclude Include="include\Task\TaskObserver.h" />
     <ClInclude Include="include\Task\TaskRunner.h" />
@@ -136,6 +138,7 @@
     <ClInclude Include="include\Thread\Thread.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MinHeap.cpp" />
     <ClCompile Include="src\Handler\MessageHandler.cpp" />
     <ClCompile Include="src\Handler\MessageThreadHandler.cpp" />
     <ClCompile Include="src\Handler\TaskHandler.cpp" />

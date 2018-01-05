@@ -43,6 +43,12 @@
     <Filter Include="源文件\Task">
       <UniqueIdentifier>{152cef79-4b1c-43aa-92eb-bf27ca8f075e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Storge">
+      <UniqueIdentifier>{33e6d285-674b-47bc-845f-afa4d267aa42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Storge">
+      <UniqueIdentifier>{183f3625-2a5c-4d25-9e78-e3cff4e64797}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Thread\MessageThread.h">
@@ -90,6 +96,12 @@
     <ClInclude Include="include\Message\MessageControl.h">
       <Filter>头文件\Message</Filter>
     </ClInclude>
+    <ClInclude Include="include\Storge\Queue.h">
+      <Filter>头文件\Storge</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Storge\MinHeap.h">
+      <Filter>头文件\Storge</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Thread\Runnable.cpp">
@@ -124,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="src\Message\MessageControl.cpp">
       <Filter>源文件\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHeap.cpp">
+      <Filter>源文件\Storge</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

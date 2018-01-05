@@ -3,7 +3,7 @@
 
 Looper::Looper(){
 	mQuitting = false;
-	mQueue = new MessageQueue<Message>();
+	mQueue = new Queue<Message>();
 }
 
 Looper::~Looper(){
