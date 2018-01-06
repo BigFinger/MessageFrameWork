@@ -6,7 +6,7 @@ typedef struct node_data
 {
 	__int64 key;		   /* 唯一ID */
 	int idx;			   /* 记录在数组中的位置 */
-	void* ptr;			   /* 下个节点的指针 */
+	void* ptr;			   /* 用于记录下一个空闲节点 */
 	unsigned int order;
 }node_data_t;
 

@@ -8,4 +8,5 @@ public:
 	virtual void wait() = 0;
 	virtual void wait(unsigned long millisecs) = 0;
 	virtual void notify() = 0;
+    virtual void notifyAll() = 0;
 };

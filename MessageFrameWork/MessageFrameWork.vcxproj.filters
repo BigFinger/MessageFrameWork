@@ -49,6 +49,12 @@
     <Filter Include="源文件\Storge">
       <UniqueIdentifier>{183f3625-2a5c-4d25-9e78-e3cff4e64797}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Lock">
+      <UniqueIdentifier>{9ef1e376-0e5b-4c00-802b-a26863b9e2a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lock">
+      <UniqueIdentifier>{b80bba8e-c5cb-486e-a875-3a106de38e57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Thread\MessageThread.h">
@@ -102,6 +108,18 @@
     <ClInclude Include="include\Storge\MinHeap.h">
       <Filter>头文件\Storge</Filter>
     </ClInclude>
+    <ClInclude Include="include\Lock\ISynchronizable.h">
+      <Filter>头文件\Lock</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Lock\LockWrap.h">
+      <Filter>头文件\Lock</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Lock\Mutex.h">
+      <Filter>头文件\Lock</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Lock\Lock.h">
+      <Filter>头文件\Lock</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Thread\Runnable.cpp">
@@ -137,8 +155,17 @@
     <ClCompile Include="src\Message\MessageControl.cpp">
       <Filter>源文件\Message</Filter>
     </ClCompile>
-    <ClCompile Include="MinHeap.cpp">
+    <ClCompile Include="src\Storge\MinHeap.cpp">
       <Filter>源文件\Storge</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Message\MessageQueue.cpp">
+      <Filter>源文件\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lock\Mutex.cpp">
+      <Filter>源文件\Lock</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lock\Lock.cpp">
+      <Filter>源文件\Lock</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
