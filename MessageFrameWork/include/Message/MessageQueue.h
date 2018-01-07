@@ -3,6 +3,8 @@
 #include "Message/Message.h"
 #include "Storge/Queue.h"
 #include "Storge/MinHeap.h"
+#include "Lock/Mutex.h"
+#include "Lock/SpinLock.h"
 
 enum{FLAG_EMPTY, FLAG_NOT_EMPTY};
 
@@ -22,6 +24,9 @@ private:
 private:
     Queue<Message> mQueue;
     MinHeap mTimerHeap;
+    Mutex mQueueLock;
+    Mutex mTimerHeapLock;
+    SpinLock mMapLock;
     volatile int mFlag;
     volatile unsigned int mCurrNumber;
     std::map<int, unsigned int> mCancelMap;

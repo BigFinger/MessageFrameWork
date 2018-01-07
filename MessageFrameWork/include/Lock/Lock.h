@@ -16,8 +16,8 @@ public:
     void notifyAll();
 
 private:
-    void operator=(const Lock& lock);
-    Lock(const Lock& lock);
+    void operator=(const Lock& lock){}
+    Lock(const Lock& lock){}
 private:
     volatile unsigned int                       _owner;
     volatile unsigned int                       _count;

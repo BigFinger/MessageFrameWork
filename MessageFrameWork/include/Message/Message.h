@@ -7,7 +7,10 @@ class Runnable;
 class MessageHandler;
 class BaseMessageLooper;
 
-#define MESSAGE_ID_INTERNAL_EXIT   -0x1000
+#define MSSSAGE_ID_INTERNAL_BASE  -0x1000
+#define MESSAGE_ID_INTERNAL_EXIT  MSSSAGE_ID_INTERNAL_BASE-1
+#define MESSAGE_ID_INTERNAL_TIMER MSSSAGE_ID_INTERNAL_BASE-2
+#define MESSAGE_ID_INTERNAL_RUNNABLE MSSSAGE_ID_INTERNAL_BASE-3
 
 class _declspec(dllexport) Message{
 public:

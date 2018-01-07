@@ -50,6 +50,7 @@ void Lock::wait(){
     SleepConditionVariableCS(&_condition, &_mutex, 0XFFFFFFFF);
     _count = _count_before_wait[Thread::getCurrentThreadId()];
     _owner = Thread::getCurrentThreadId();
+    DWORD e = GetLastError();
 }
 
 void Lock::wait(unsigned long millisecs){
