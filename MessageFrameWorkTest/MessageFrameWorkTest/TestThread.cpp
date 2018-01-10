@@ -1,4 +1,5 @@
-#include "Test/TestThread.h"
+#include "TestThread.h"
+#include "Message/Message.h"
 
 extern bool waitting;
 

@@ -51,11 +51,11 @@ void MessageQueue::removeMsgByID(int msgid){
 }
 
 void MessageQueue::wakeupConsumer(){
-    if (FLAG_NOT_EMPTY == InterlockedCompareExchange((unsigned int*)&mFlag, FLAG_NOT_EMPTY, FLAG_EMPTY))
+    if (FLAG_EMPTY == InterlockedCompareExchange((unsigned int*)&mFlag, FLAG_NOT_EMPTY, FLAG_EMPTY))
     {
-        LockWrap<Mutex> lock(mQueueLock);
+        LockWrap<Mutex> lock(mWaitLock);
         mFlag = FLAG_NOT_EMPTY;
-        mQueueLock.notify();
+        mWaitLock.notify();
     }
 }
 
@@ -111,10 +111,27 @@ Message* MessageQueue::fetchNext(){
                 }
                 else
                 {
-                    nextPollTimeOut -= diff;
+                    nextPollTimeOut = -diff;
+					break;
                 }
             }
         }
+		if (mQueue.top() != NULL)
+		{
+			LockWrap<Mutex> lock(mQueueLock);
+			msg = mQueue.pop();
+			return msg;
+		}
+		if (FLAG_EMPTY == InterlockedCompareExchange((unsigned int*)&mFlag, FLAG_EMPTY, FLAG_NOT_EMPTY))
+		{
+			LockWrap<Mutex> lock(mWaitLock);
+			if (mFlag == FLAG_NOT_EMPTY)
+			{
+				continue;
+			}
+			mWaitLock.wait(nextPollTimeOut);
+		}
     }
+	return NULL;
 }
 

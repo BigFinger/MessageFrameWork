@@ -67,19 +67,32 @@ Message* Message::get(MessageHandler* handler){
     return msg;
 }
 
-void Message::postToTarget(MessageHandler* handle){
+void Message::postToTarget(MessageControl* pControl){
     printf("Waiter: OK, please Hold on!\n");
     if (target != NULL)
     {
-        target->sendMessage(this);
+        target->sendMessage(this, pControl);
     }
 }
 
-void Message::sendToTarget(MessageHandler* handle){
+void Message::sendToTarget(MessageControl* pControl){
     if (target != NULL)
     {
-        target->sendMessage(this);
+        target->sendMessage(this, pControl);
     }
+}
+
+void Message::postToTargetDelayed(Runnable* r, unsigned long delayMillis, MessageControl* pControl){
+	if (target != NULL)
+	{
+		target->postDelayed(r, delayMillis, pControl);
+	}
+}
+void Message::sendToTargetDelayed(unsigned long delayMillis, MessageControl* pControl){
+	if (target != NULL)
+	{
+		target->sendDelayedMessage(this, delayMillis, pControl);
+	}
 }
 
 void Message::recycle(){
@@ -89,8 +102,35 @@ void Message::recycle(){
 
 void Message::releasePool(){
     Message* m;
-    while (!gFreeQueue.isEmpty()) {
+    while (!gFreeQueue.isEmpty()) 
+	{
         m = gFreeQueue.pop();
         delete m;
     }
+}
+
+int Message::enterInProgressState(){
+	int res = 0;
+	if (mControl != NULL)
+	{
+		res = mControl->setInProcess() >= 0 ? 0 : -1;
+	}
+	return res;
+}
+
+int Message::enterCompleteState(){
+	int res = 0;
+	if (mControl != NULL)
+	{
+		res = mControl->setComplete() >= 0 ? 0 : -1;
+	}
+	return res;
+}
+
+bool Message::isNeedCallOnCancel(){
+	if (mControl != NULL && callback != NULL)
+	{
+		return mControl->isNeedCallOnCancel();
+	}
+	return false;
 }

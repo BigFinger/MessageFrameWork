@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{773F1F8F-3003-4CDC-9C4E-29167AAA1B08}</ProjectGuid>
-    <RootNamespace>MessageFrameWork</RootNamespace>
+    <ProjectGuid>{77FF55EA-CD56-496E-AD0B-896D01945AD2}</ProjectGuid>
+    <RootNamespace>MessageFrameWorkTest</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -30,7 +30,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -43,7 +43,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -65,31 +65,29 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>.\bin\$(Platform)\$(Configuration)\</OutDir>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Coding\StudySpace\MessageFrameWork\MessageFrameWorkTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Coding\StudySpace\MessageFrameWork\MessageFrameWorkTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>MessageFrameWork.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Coding\StudySpace\MessageFrameWork\MessageFrameWorkTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Coding\StudySpace\MessageFrameWork\MessageFrameWorkTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>MessageFrameWork.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -111,7 +109,6 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -120,46 +117,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\Handler\MessageHandler.h" />
-    <ClInclude Include="include\Handler\MessageThreadHandler.h" />
-    <ClInclude Include="include\Handler\TaskHandler.h" />
-    <ClInclude Include="include\Lock\ISynchronizable.h" />
-    <ClInclude Include="include\Lock\Lock.h" />
-    <ClInclude Include="include\Lock\LockWrap.h" />
-    <ClInclude Include="include\Lock\Mutex.h" />
-    <ClInclude Include="include\Lock\SpinLock.h" />
-    <ClInclude Include="include\Looper\BaseMessageLooper.h" />
-    <ClInclude Include="include\Looper\IMessageLooper.h" />
-    <ClInclude Include="include\Looper\Looper.h" />
-    <ClInclude Include="include\Message\Message.h" />
-    <ClInclude Include="include\Message\MessageControl.h" />
-    <ClInclude Include="include\Message\MessageQueue.h" />
-    <ClInclude Include="include\Storge\MinHeap.h" />
-    <ClInclude Include="include\Storge\Queue.h" />
-    <ClInclude Include="include\Task\Task.h" />
-    <ClInclude Include="include\Task\TaskObserver.h" />
-    <ClInclude Include="include\Task\TaskRunner.h" />
-    <ClInclude Include="include\Thread\MessageThread.h" />
-    <ClInclude Include="include\Thread\Runnable.h" />
-    <ClInclude Include="include\Thread\Thread.h" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TestThread.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Handler\MessageHandler.cpp" />
-    <ClCompile Include="src\Handler\MessageThreadHandler.cpp" />
-    <ClCompile Include="src\Handler\TaskHandler.cpp" />
-    <ClCompile Include="src\Lock\Lock.cpp" />
-    <ClCompile Include="src\Lock\Mutex.cpp" />
-    <ClCompile Include="src\Lock\SpinLock.cpp" />
-    <ClCompile Include="src\Looper\BaseMessageLooper.cpp" />
-    <ClCompile Include="src\Looper\Looper.cpp" />
-    <ClCompile Include="src\Message\Message.cpp" />
-    <ClCompile Include="src\Message\MessageControl.cpp" />
-    <ClCompile Include="src\Message\MessageQueue.cpp" />
-    <ClCompile Include="src\Storge\MinHeap.cpp" />
-    <ClCompile Include="src\Task\Task.cpp" />
-    <ClCompile Include="src\Thread\MessageThread.cpp" />
-    <ClCompile Include="src\Thread\Runnable.cpp" />
-    <ClCompile Include="src\Thread\Thread.cpp" />
+    <ClInclude Include="TestThread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

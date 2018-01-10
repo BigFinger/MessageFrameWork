@@ -37,7 +37,7 @@ bool BaseMessageLooper::onProcMessage(Message* msg){
 void BaseMessageLooper::quit(){
 	Message* msg = Message::get();
 	msg->what = MESSAGE_ID_INTERNAL_EXIT;
-	postMessage(msg);
+	postMessage(msg, 0);
 }
 
 IMessageLooper* IMessageLooper::getForThread() {

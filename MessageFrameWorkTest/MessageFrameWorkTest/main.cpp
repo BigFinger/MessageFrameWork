@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Test/TestThread.h"
 
+
 bool waitting = false;
 
 int main()
@@ -11,7 +12,7 @@ int main()
 	printf("Bad Boy: Look, There are many pretty girls in 85C!!!\n");
 	MessageHandler* handler = thread->getHandler();
 	Message* msg = handler->obtainMessage(HandleCoffee);
-	msg->postToTarget();
+	msg->sendToTargetDelayed(1000);
 	waitting = true;
 	printf("Bad Boy is picking up pretty girls...\n");
 	while(waitting)
@@ -19,5 +20,6 @@ int main()
 	}
 	msg = handler->obtainMessage(MESSAGE_ID_INTERNAL_EXIT);
 	msg->postToTarget();
-	getchar();
+	system("PAUSE");
+	return 0;
 }

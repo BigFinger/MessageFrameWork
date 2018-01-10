@@ -67,3 +67,15 @@ int MessageControl::setComplete(){
 	}
 	return result;
 }
+
+bool MessageControl::isComplete(){
+	return mFlag == STATE_COMPLETE;
+}
+
+bool MessageControl::isCanceled(){
+	return mFlag > STATE_CANCELED;
+}
+
+bool MessageControl::isNeedCallOnCancel(){
+	return mFlag == STATE_CANCEL_WITH_CALLBACK;
+}

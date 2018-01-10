@@ -55,12 +55,8 @@ void MinHeap::shiftDown(unsigned int hole_index, node_data_t* data){
 
 void MinHeap::shiftUp(unsigned int hole_index, node_data_t *data){
     unsigned int parent = hole_index % 2 ? hole_index / 2 : hole_index / 2 - 1;
-    while(parent >= 0)
+    while(hole_index && compareNode(mHeap.p[parent], data))
     {
-        if (compareNode(data, mHeap.p[parent]))
-        {
-            break;
-        }
         mHeap.p[parent] = mHeap.p[hole_index];
         mHeap.p[parent]->idx = hole_index;
         hole_index = parent;
@@ -126,6 +122,10 @@ int MinHeap::getSize() {
     return mHeap.size;
 }
 
+bool MinHeap::isEmpty(){
+	return mHeap.size == 0;
+}
+
 int MinHeap::reserveSize(unsigned int n){
     if (mHeap.capacity < n)
     {
@@ -166,6 +166,7 @@ int MinHeap::erase(node_data_t* data){
             shiftUp(data->idx, last);
         }
     }
+	return 0;
 }
 
 node_data_t* MinHeap::erase(unsigned int idx){

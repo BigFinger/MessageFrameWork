@@ -120,6 +120,9 @@
     <ClInclude Include="include\Lock\Lock.h">
       <Filter>头文件\Lock</Filter>
     </ClInclude>
+    <ClInclude Include="include\Lock\SpinLock.h">
+      <Filter>头文件\Lock</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Thread\Runnable.cpp">
@@ -165,6 +168,9 @@
       <Filter>源文件\Lock</Filter>
     </ClCompile>
     <ClCompile Include="src\Lock\Lock.cpp">
+      <Filter>源文件\Lock</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lock\SpinLock.cpp">
       <Filter>源文件\Lock</Filter>
     </ClCompile>
   </ItemGroup>

@@ -3,7 +3,7 @@
 
 Looper::Looper(){
 	mQuitting = false;
-	mQueue = new Queue<Message>();
+	mQueue = new MessageQueue();
 }
 
 Looper::~Looper(){
@@ -18,17 +18,24 @@ void Looper::loop(){
 		{
 			break;
 		}
-		Message* msg = mQueue->pop();
+		Message* msg = mQueue->next();
 		if (msg != NULL)
 		{
-			onProcMessage(msg);
+			if (!onProcMessage(msg))
+			{
+				return;
+			}
+		}
+		else
+		{
+			return;
 		}
 	}
 }
 
-void Looper::postMessage(Message * message){
+void Looper::postMessage(Message * message, int when){
 	if (!mQuitting && mQueue != NULL)
 	{
-		mQueue->push(message);
+		mQueue->enqueueMessage(message, when);
 	}
 }
