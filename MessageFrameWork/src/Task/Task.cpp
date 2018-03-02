@@ -48,6 +48,10 @@ bool Task::start(TaskRunner* taskRunner){
 	return true;
 }
 
+bool Task::isRunning() const{
+    return mIsRunning;
+}
+
 void Task::run(){
 	int ret = mRunner->taskRun();
 	Message* msg = mHandler->obtainMessage(ret);

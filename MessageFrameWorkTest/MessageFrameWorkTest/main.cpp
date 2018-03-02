@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "Test/TestThread.h"
-
+#include "TestTask.h"
 
 bool waitting = false;
 
@@ -18,6 +18,12 @@ int main()
 	while(waitting)
 	{
 	}
+    waitting = true;
+    TestTask* task = new TestTask();
+    task->start();
+    while (waitting)
+    {
+    }
 	msg = handler->obtainMessage(MESSAGE_ID_INTERNAL_EXIT);
 	msg->postToTarget();
 	system("PAUSE");
