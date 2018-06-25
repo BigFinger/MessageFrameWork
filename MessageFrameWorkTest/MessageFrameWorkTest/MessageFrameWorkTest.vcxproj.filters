@@ -21,9 +21,18 @@
     <ClCompile Include="TestThread.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TestTask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestTask.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultDefine.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
